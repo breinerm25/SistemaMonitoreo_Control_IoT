@@ -23,11 +23,12 @@ if uploaded_file is not None:
         st.subheader('Estadísticos básicos de los sensores.')
         st.dataframe(df1.describe())
         
-        min_temp = st.slider('Selecciona valor mínimo del filtro ', min_value=-10, max_value=45, value=23, key=1)
+
+        st.subheader("Temperaturas superiores al valor configurado.")
+        min_temp = st.slider('Selecciona valor mínimo del filtro ', min_value=0, max_value=45, value=23, key=1)
         # Filtrar el DataFrame utilizando query
         filtrado_df_min = df1.query(f"`Temperatura` > {min_temp}")
         # Mostrar el DataFrame filtrado
-        st.subheader("Temperaturas superiores al valor configurado.")
         st.write('Dataframe Filtrado')
         st.write(filtrado_df_min)
         
