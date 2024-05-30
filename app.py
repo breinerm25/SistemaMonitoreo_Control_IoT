@@ -12,7 +12,8 @@ if uploaded_file is not None:
     df1 = pd.read_csv(uploaded_file)
     
     st.subheader('Contenido del archivo cargado')
-    st.write('Columnas del DataFrame:', df1.columns.tolist())  # Muestra las columnas del DataFrame
+    st.write(df1.head())
+    #st.write('Columnas del DataFrame:', df1.columns.tolist())  # Muestra las columnas del DataFrame
     
     if 'time' in df1.columns:
         st.subheader('Perfil gráfico de la variable medida.')
