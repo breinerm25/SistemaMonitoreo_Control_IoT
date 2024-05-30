@@ -6,7 +6,7 @@ st.title('Análisis de datos de Sensores en Mi Ciudad')
 image = Image.open('Graph.png')
 st.image(image)
 
-uploaded_file = st.file_uploader('Choose a file')
+uploaded_file = st.file_uploader('Choose a file', delimiter=',')
 
 if uploaded_file is not None:
     df1 = pd.read_csv(uploaded_file)
