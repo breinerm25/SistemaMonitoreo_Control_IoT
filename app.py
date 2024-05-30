@@ -51,4 +51,4 @@ if uploaded_file is not None:
     else:
         st.error("La columna 'time' no existe en el archivo cargado. Por favor, verifica el archivo.")
 else:
-    st.warning('Necesitas cargar un archivo csv excel.')
+    st.warning('Necesitas cargar un archivo csv.')
