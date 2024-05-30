@@ -32,11 +32,20 @@ if uploaded_file is not None:
         st.write('Dataframe Filtrado')
         st.write(filtrado_df_min)
         
-        max_temp = st.slider('Selecciona valor máximo del filtro ', min_value=0, max_value=60, value=23, key=2)
+
+        st.subheader("Humedades ambiente superiores al valor configurado.")
+        max_hum = st.slider('Selecciona valor máximo del filtro ', min_value=0, max_value=100, value=23, key=2)
         # Filtrar el DataFrame utilizando query
-        filtrado_df_max = df1.query(f"`Temperatura` < {max_temp}")
+        filtrado_df_max = df1.query(f"`Humedad` < {max_hum}")
         # Mostrar el DataFrame filtrado
-        st.subheader("Temperaturas Inferiores al valor configurado.")
+        st.write('Dataframe Filtrado')
+        st.write(filtrado_df_max)
+
+        st.subheader("Humedades del sustrato superiores al valor configurado.")
+        max_humSus = st.slider('Selecciona valor máximo del filtro ', min_value=0, max_value=100, value=23, key=2)
+        # Filtrar el DataFrame utilizando query
+        filtrado_df_max = df1.query(f"`Humedad Sustrato` < {max_humSus}")
+        # Mostrar el DataFrame filtrado
         st.write('Dataframe Filtrado')
         st.write(filtrado_df_max)
     else:
