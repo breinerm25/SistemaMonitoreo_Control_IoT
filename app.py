@@ -12,7 +12,6 @@ if uploaded_file is not None:
     df1 = pd.read_csv(uploaded_file)
     
     st.subheader('Contenido del archivo cargado')
-    st.write(df1.head())  # Muestra las primeras filas del DataFrame
     st.write('Columnas del DataFrame:', df1.columns.tolist())  # Muestra las columnas del DataFrame
     
     if 'time' in df1.columns:
@@ -32,7 +31,7 @@ if uploaded_file is not None:
         st.write('Dataframe Filtrado')
         st.write(filtrado_df_min)
         
-        max_temp = st.slider('Selecciona valor máximo del filtro ', min_value=-10, max_value=45, value=23, key=2)
+        max_temp = st.slider('Selecciona valor máximo del filtro ', min_value=0, max_value=60, value=23, key=2)
         # Filtrar el DataFrame utilizando query
         filtrado_df_max = df1.query(f"`Temperatura` < {max_temp}")
         # Mostrar el DataFrame filtrado
