@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 from PIL import Image
 
-st.title('Análisis de datos de Sensores en Mi Ciudad')
+st.title('Análisis de datos de Sensores en huerta urbana #1')
 image = Image.open('Graph.png')
 st.image(image)
 
