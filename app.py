@@ -19,10 +19,9 @@ if uploaded_file is not None:
         st.subheader('Perfil gráfico de la variable medida.')
         df1 = df1.set_index('time')
         st.line_chart(df1)
-        
-        st.write(df1)
+
         st.subheader('Estadísticos básicos de los sensores.')
-        st.dataframe(df1["Temperatura"].describe())
+        st.dataframe(df1.describe())
         
         min_temp = st.slider('Selecciona valor mínimo del filtro ', min_value=-10, max_value=45, value=23, key=1)
         # Filtrar el DataFrame utilizando query
